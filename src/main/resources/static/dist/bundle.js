@@ -62,14 +62,14 @@
 
 	    renderData: function (suggestion) {
 	        return suggestion.map(function (suggestion, index) {
-	            return React.createElement("div", { className: "row", name: "suggestionData" }, suggestion.street_line);
+	            return React.createElement("div", { name: "suggestionData" }, suggestion.street_line);
 	        });
 	    },
 
 	    render: function () {
 
 	        const suggestion = this.props.suggestion.suggestions;
-	        return React.createElement("div", { className: "container" }, suggestion !== null ? this.renderData(suggestion) : null);
+	        return React.createElement("div", null, suggestion !== null ? this.renderData(suggestion) : null);
 	    }
 	});
 
@@ -19821,13 +19821,12 @@
 	    render: function () {
 	        const validationData = this.state.validateData;
 
-	        return React.createElement("div", null, React.createElement("div", null, React.createElement("label", null, "Address", React.createElement("input", { type: "text", name: "addressLine1", onChange: this.addressSuggestion })), React.createElement("label", null, "City", React.createElement("input", { type: "text", name: "city", value: this.state.myCity })), React.createElement("label", null, "State", React.createElement("input", { type: "text", name: "state", value: this.state.myState })), React.createElement("label", null, "Zip Code", React.createElement("input", { type: "text", name: "zipCode", value: this.state.zipCode })), React.createElement("button", { type: "submit" }, "Submit")
+	        return React.createElement("div", null, React.createElement("div", { className: "container containerAlignment" }, React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }, React.createElement("label", null, "Address")), React.createElement("div", { className: "col-sm-2" }, React.createElement("input", { type: "text", name: "addressLine1", onChange: this.addressSuggestion }))), typeof this.state.suggestionData != "undefined" ? React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }), React.createElement("div", { className: "col-sm-2" }, React.createElement(SuggestedAddress, { suggestion: this.state.suggestionData }))) : null, React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }, React.createElement("label", null, "City")), React.createElement("div", { className: "col-sm-2" }, React.createElement("input", { type: "text", name: "city", value: this.state.myCity }))), React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }, React.createElement("label", null, "State")), React.createElement("div", { className: "col-sm-2" }, React.createElement("input", { type: "text", name: "state", value: this.state.myState }))), React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }, React.createElement("label", null, "Zip Code")), React.createElement("div", { className: "col-sm-2" }, React.createElement("input", { type: "text", name: "zipCode", value: this.state.zipCode }))), React.createElement("div", { className: "row rowAlignment" }, React.createElement("div", { className: "col-sm-2" }), React.createElement("div", { className: "col-sm-2" }, React.createElement("button", { type: "submit", className: "btn btn-primary" }, "Submit")))
 
 	        /*{typeof validationData != "undefined" ?*/
 	        /*<div>{validationData[0].delivery_line_1}</div> : null*/
 	        /*}*/
-
-	        ), typeof this.state.suggestionData != "undefined" ? React.createElement(SuggestedAddress, { suggestion: this.state.suggestionData }) : null);
+	        ));
 	    }
 	});
 

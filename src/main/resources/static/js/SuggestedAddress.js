@@ -11,7 +11,7 @@ const SuggestedAddress = React.createClass({
             suggestion.map(function (suggestion, index) {
                 return (
 
-                        <div className="row" name="suggestionData">{suggestion.street_line}</div>
+                        <div name="suggestionData">{suggestion.street_line}</div>
 
                 )
             })
@@ -24,7 +24,7 @@ const SuggestedAddress = React.createClass({
         const suggestion = this.props.suggestion.suggestions;
         return(
 
-            <div className="container">
+            <div>
                 {suggestion  !== null ?
                 this.renderData(suggestion) : null }
             </div>

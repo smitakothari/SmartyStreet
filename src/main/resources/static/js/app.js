@@ -53,35 +53,59 @@ const App = React.createClass({
 
         return (
             <div>
-                <div>
-                <label>
-                    Address
-                    <input type="text" name="addressLine1" onChange={this.addressSuggestion}></input>
-                </label>
-                <label>
-                    City
-                    <input type="text" name="city" value={this.state.myCity}></input>
-                </label>
-                <label>
-                    State
-                    <input type="text" name="state" value={this.state.myState}></input>
-                </label>
-                <label>
-                    Zip Code
-                    <input type="text" name="zipCode" value={this.state.zipCode}></input>
-                </label>
-                <button type="submit">Submit</button>
+                <div className="container containerAlignment">
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2">
+                            <label>Address</label>
+                        </div>
+                        <div className="col-sm-2">
+                            <input type="text" name="addressLine1" onChange={this.addressSuggestion}></input>
+                        </div>
+                    </div>
+                    {typeof this.state.suggestionData != "undefined" ?
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2"></div>
+                        <div className="col-sm-2">
+                                <SuggestedAddress suggestion={this.state.suggestionData}/>
+                        </div>
+                    </div> : null}
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2">
+                            <label>City</label>
+                        </div>
+                        <div className="col-sm-2">
+                            <input type="text" name="city" value={this.state.myCity}></input>
+                        </div>
+                    </div>
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2">
+                            <label>State</label>
+                        </div>
+                        <div className="col-sm-2">
+                            <input type="text" name="state" value={this.state.myState}></input>
+                        </div>
+                    </div>
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2">
+                            <label>Zip Code</label>
+                        </div>
+                        <div className="col-sm-2">
+                            <input type="text" name="zipCode" value={this.state.zipCode}></input>
+                        </div>
+                    </div>
+                    <div className="row rowAlignment">
+                        <div className="col-sm-2"></div>
+                        <div className="col-sm-2">
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
 
-                {/*{typeof validationData != "undefined" ?*/}
-                {/*<div>{validationData[0].delivery_line_1}</div> : null*/}
-                {/*}*/}
-
+                    {/*{typeof validationData != "undefined" ?*/}
+                    {/*<div>{validationData[0].delivery_line_1}</div> : null*/}
+                    {/*}*/}
                 </div>
 
-                {typeof this.state.suggestionData != "undefined" ?
-                    <SuggestedAddress suggestion={this.state.suggestionData}/>
-                     : null
-                }
+
 
             </div>
         );

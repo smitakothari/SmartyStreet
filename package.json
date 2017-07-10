@@ -1,0 +1,46 @@
+{
+  "name": "smarty-street",
+  "version": "1.0.0",
+  "description": "Display different API results for Airline",
+  "main": "app.js",
+  "scripts": {
+    "test": "karma start",
+    "babel": "babel --presets es2015 js/app.js -o build/main.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "sjain",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "chrome": "^0.1.0",
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-karma-runner": "^1.1.11",
+    "gulp-uglify": "^1.5.3",
+    "gulp-webpack": "^1.5.0",
+    "jquery": "^2.2.3",
+    "json-loader": "^0.5.4",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "path": "^0.12.7",
+    "react": "^0.14.8",
+    "react-addons-pure-render-mixin": "^0.14.8",
+    "react-bootstrap": "^0.29.1",
+    "react-dom": "^0.14.7",
+    "react-radio": "^2.1.1",
+    "react-radio-group": "^2.2.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.6.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "jsx-loader": "^0.13.2",
+    "react-router": "^2.0.0"
+  }
+}
